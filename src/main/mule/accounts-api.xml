@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="1811246f-c8d9-463e-a5b2-fc030c53e7b0" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="accounts-apiFlow" doc:id="5322b4ba-b49e-4caf-8f9b-24ba45666c30" >
+		<http:listener doc:name="Listener" doc:id="eb12f9fb-49f1-4760-ab0b-99637c5ce4eb" config-ref="HTTP_Listener_config" path="/accounts"/>
+		<logger level="INFO" doc:name="Logger" doc:id="f67befb7-6940-4697-a79e-9675e9e704cd" message="accounts api invoked"/>
+		<ee:transform doc:name="Transform Message" doc:id="cad65dfa-8ac5-4080-ac29-88c73bea6700" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"accounts": [
+		{
+			"account-name":"icici923",
+			"balance":456.89
+		},
+		{
+			"account-name":"hdfc333",
+			"balance":146.22
+		},
+	]
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
