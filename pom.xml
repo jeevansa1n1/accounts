@@ -11,6 +11,14 @@
 
 	<name>accounts-api</name>
 
+	<distributionManagement>
+		<repository>
+			<id>anypoint-exchange</id>
+			<name>Anypoint Exchange</name>
+			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/d5d07085-e7b1-44c0-9405-13c16c597e8d/maven</url>
+		</repository>
+	</distributionManagement>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -38,8 +46,9 @@
 						<muleVersion>4.11.4</muleVersion>
 						<username>g1saini</username>
 						<password>Welcome0$</password>
-						<applicationName>accounts-g1-api</applicationName>
-						<target>Cloudhub-US-East-2</target>>
+						<applicationName>accounts-api</applicationName>
+						<target>Cloudhub-US-East-2</target>
+						>
 						<replicas>1</replicas>
 						<vCores>0.1</vCores>
 					</cloudhub2Deployment>
@@ -89,5 +98,7 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+
+
 
 </project>
