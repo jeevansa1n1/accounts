@@ -5,17 +5,17 @@ pipeline
 	stages{
 		stage('Build app'){
 			steps{
-				sh 'mvn clean install'
+				sh 'opt/homebrew/bin/mvn clean install'
 			}
 		}
 		stage('Deploy app'){
 			steps{
-				sh 'mvn deploy -DmuleDeploclean install'
+				sh 'opt/homebrew/bin/mvn deploy -DmuleDeploclean install'
 			}
 		}
 		stage('Testing app'){
 			steps{
-				sh 'newman run /Users/jeev/postman-collections/accounts-api-coll.postman_collection.json'
+				sh '/opt/homebrew/bin/newman run /Users/jeev/postman-collections/accounts-api-coll.postman_collection.json'
 			}
 		}
 	}
