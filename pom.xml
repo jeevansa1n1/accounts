@@ -39,6 +39,7 @@
 						<username>g1saini</username>
 						<password>Welcome0$</password>
 						<applicationName>accounts-g1-api</applicationName>
+						<target>Cloudhub-US-East-2</target>>
 						<replicas>1</replicas>
 						<vCores>0.1</vCores>
 					</cloudhub2Deployment>
