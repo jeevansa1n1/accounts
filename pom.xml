@@ -48,7 +48,6 @@
 						<password>Welcome0$</password>
 						<applicationName>accounts-api</applicationName>
 						<target>Cloudhub-US-East-2</target>
-						>
 						<replicas>1</replicas>
 						<vCores>0.1</vCores>
 					</cloudhub2Deployment>

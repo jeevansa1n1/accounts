@@ -23,8 +23,8 @@ output application/json
 			"balance":456.89
 		},
 		{
-			"account-name":"axis78",
-			"balance":146.22
+			"account-name":"westpac69",
+			"balance":999.22
 		},
 	]
 }]]></ee:set-payload>
