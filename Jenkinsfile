@@ -5,12 +5,12 @@ pipeline
 	stages{
 		stage('Build app'){
 			steps{
-				sh 'opt/homebrew/bin/mvn clean install'
+				sh '/opt/homebrew/bin/mvn clean install'
 			}
 		}
 		stage('Deploy app'){
 			steps{
-				sh 'opt/homebrew/bin/mvn deploy -DmuleDeploclean install'
+				sh '/opt/homebrew/bin/mvn deploy -DmuleDeploclean install'
 			}
 		}
 		stage('Testing app'){
